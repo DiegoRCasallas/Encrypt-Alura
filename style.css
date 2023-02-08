@@ -1,0 +1,26 @@
+:root {
+    /*colores*/
+    --dark-blue: #0a3871;
+    --gray-light: #67808E;
+    --gray-obscure: #495057;
+    --gray-dark: #343A40;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Inter';
+}
+
+header {
+    min-width: 320px;
+}
+
+main {
+    min-width: 320px;
+}
