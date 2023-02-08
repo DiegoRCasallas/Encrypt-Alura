@@ -1,0 +1,25 @@
+.main-container{
+    display: flex;
+}
+.main-left{
+    width: 80%;
+}
+.main-right{
+
+}
+.card-message {
+    display: inline-block;
+    width: 95%;
+    height: 100%;
+    margin:0 auto;
+    padding: 3.2rem;
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--gray-dark);
+    border-radius: 24px;
+    box-shadow: 0px 24px 32px -8px var(--gray-light);
+}
+.card-message__img{
+    display:inline-block;
+}

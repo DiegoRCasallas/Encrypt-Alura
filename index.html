@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;800&display=swap" rel="stylesheet">
+    <!-- links mediaqueries -->
+    <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 930px)">
 
 
 
@@ -22,35 +25,47 @@
         <img src="./assets/alura-logo.svg" alt="alura logo">
     </header>
     <main>
-        <section class="main-left main-input">
-            <div class="logo">
-                <img src="" alt="">
-            </div>
-            <div class="card-encrypt">
-                <input type="text">
-                <p>Aqui va el texto encriptado</p>
-                <button class="button-encrypt">Encriptar</button>
-                <button class="button-descrypt button">Desencriptar</button>
-            </div>
-        </section>
-        <section class="main-right main-output">
-            <!--logo mujer-->
-            <img src="" alt="">
-            <div class="output">
-                <h3>Ningun mesnsaje fue encontrado</h3>
-                <p>Ingresa el texto que desees ecriptar</p>
-                <button class="button-copy button">Copiar</button>
-            </div>
+        <div class="main-container">
+            <section class="main-left main-input">
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <div class="card-encrypt">
+                    <!-- <input type="text" placeholder="Ingrese el texto Aquí"> -->
+                    <textarea name="" id="input-text" cols="30" rows="10" placeholder="ingrese el text aquí"></textarea>
+                    <p>
+                        <span><img src="./assets/icon-precaution.svg" alt=""></span>Sólo letras minúsculas y sin acentos
+                    </p>
+                    <div class="flex-buttons">
+                        <button class="button-encrypt button">Encriptar</button>
+                        <button class="button-decrypt button">Desencriptar</button>
+                    </div>
 
-        </section>
+                </div>
+            </section>
 
+            <section class="main-right main-output">
+                <div class="card-message">
+                    <!--logo mujer-->
+                    <div class="card-message__img">
+                        <img src="./assets/person.svg" alt="">
+                    </div>
+                    <h3>Ningun mensaje fue encontrado</h3>
+                    <p>Ingresa el texto que desees encriptar o desencriptar</p>
+                </div>
+                <div class="card-output">
+                    <p class="output__text">Este es el output de encriptar</p>
+                    <button class="button-copy button">Copiar</button>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
         <div class="info">
             <p>Diego Rene Casallas</p>
         </div>
     </footer>
-
+    <script></script>
 </body>
 
 </html>
