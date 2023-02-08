@@ -39,16 +39,10 @@ function encrypt(palabra) {
 /* replace()para reemplazar*/
 /*Funcion para des-ecriptar */
 function decrypt(palabra) {
-    const vocals = ['a', 'e', 'i', 'o', 'u'];
-    const keyWords = ["ai", "enter", "imes", "ober", "ufat"];
     let decryptWord = palabra.replace(/ai/g, 'a')
         .replace(/enter/g, 'e')
         .replace(/imes/g, 'i')
         .replace(/ober/g, 'o')
         .replace(/ufat/g, 'u');
-    /*recorrer string */
-    /*no concatenar si empieza por vocales
-     y segun keyWords[j].lenght-1*/
-    /*concatena solo si en la ciclo del segundo for no agrega nada */
     return decryptWord;
 }
