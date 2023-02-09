@@ -31,7 +31,12 @@ function copy() {
     console.log(`Texto copiado: ${textInput.value}`);
 }
 /*funcion para ocutar o mostrar las cards */
+
 function cambiarIdCards() {
+    /**
+ * Si la entrada de texto está vacía, muestra la tarjeta de mensaje y oculta la tarjeta de salida. Si
+ * la entrada de texto no está vacía, oculta la tarjeta de mensaje y muestra la tarjeta de salida.
+ */
     if (textInput.value == '') {
         cardMessage.setAttribute('id', 'visible');
         cardOutput.setAttribute('id', 'oculto');
@@ -41,7 +46,6 @@ function cambiarIdCards() {
         cardOutput.setAttribute('id', 'visible');
     }
 }
-
 
 /*Fucncion para comprobar que sea minuscula y no tenga acentos */
 
