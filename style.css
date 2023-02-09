@@ -98,7 +98,7 @@ main {
 
 /*MAIN OUTPUT*/
 .card-message {
-   
+
     width: 88%;
     margin: 2.4rem auto;
     padding: 3.2rem;
@@ -118,7 +118,7 @@ main {
 }
 
 .card-message__img {
-   display: none;
+    display: none;
 }
 
 .button-copy {
@@ -126,8 +126,8 @@ main {
 }
 
 .card-output {
-    
-    display: none;
+
+    /* display: none; */
     width: 88%;
     margin: 2.4rem auto;
     padding: 3.2rem;
@@ -141,8 +141,11 @@ main {
 }
 
 footer {
-    margin-top: 8.0rem;
+    height: 3.0rem;
+    margin-top: 10rem;
     min-width: 320px;
-    background-color: var(--dark-blue);
+    text-align: center;
     color: white;
+    font-size: 1.6rem;
+    background-color: var(--dark-blue);
 }
