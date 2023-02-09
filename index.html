@@ -32,7 +32,8 @@
                 </div>
                 <div class="card-encrypt">
                     <!-- <input type="text" placeholder="Ingrese el texto Aquí"> -->
-                    <textarea name="" id="input-text" cols="30" rows="10" placeholder="Ingrese el text aquí 😈"></textarea>
+                    <textarea name="" id="input-text" cols="30" rows="10"
+                        placeholder="Ingrese el text aquí 😈"></textarea>
                     <p>
                         <span><img src="./assets/icon-precaution.svg" alt=""></span>Sólo letras minúsculas y sin acentos
                     </p>
@@ -46,7 +47,8 @@
 
             <section class="main-right main-output">
                 <!-- se muestra si el textInput.value = nada -->
-                <div class="card-message"id="visible">
+
+                <div class="card-message" id="visible">
                     <!--logo mujer-->
                     <div class="card-message__img">
                         <img src="./assets/person.svg" alt="">
@@ -54,16 +56,32 @@
                     <h3>Ningun mensaje fue encontrado</h3>
                     <p>Ingresa el texto que desees encriptar o desencriptar</p>
                 </div>
+
                 <div class="card-output " id="oculto">
                     <p class="output__text">Este es el output de encriptar</p>
                     <button class="button-copy button">Copiar</button>
                 </div>
+
+                <div class="card-error " id="oculto">
+                    <p class="output__text">ERROR FORMATO NO VÁLIDO -->
+                        no se admiten acentos y mayúsculas
+                    </p>
+                </div>
+
             </section>
         </div>
     </main>
     <footer>
         <div class="info">
-            <p>Diego Rene Casallas 🍌</p>
+            <ul>
+                <li>Diego Casallas</li>
+                <li><a href="https://web.facebook.com/diegor.casallas"><img src="./assets/fb.png" alt="">FB</a></li>
+                <li><a href="https://www.linkedin.com/in/diego-r-casallas-diaz-558331149/"><img src="./assets/In.png"
+                            alt="">LinkedIn</a></li>
+                <li class="info--github"><a href="https://github.com/DiegoRCasallas"><img src="./assets/gh.png"
+                            alt="">Github</a></li>
+
+            </ul>
         </div>
     </footer>
     <script src="main.js"></script>

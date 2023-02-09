@@ -15,6 +15,7 @@ const textOutput = document.querySelector('.output__text');
 /*cards */
 const cardMessage = document.querySelector('.card-message');
 const cardOutput = document.querySelector('.card-output');
+const cardError= document.querySelector('.card-error');
 
 /*escucha de eventos */
 btnEncrypt.addEventListener('click', encrypt);
@@ -30,8 +31,8 @@ function copy() {
     textInput.value = textToCopy;
     console.log(`Texto copiado: ${textInput.value}`);
 }
-/*funcion para ocutar o mostrar las cards */
 
+/*funciones para ocutar o mostrar las cards */
 function cambiarIdCards() {
     /**
  * Si la entrada de texto está vacía, muestra la tarjeta de mensaje y oculta la tarjeta de salida. Si
@@ -44,11 +45,28 @@ function cambiarIdCards() {
     if (textInput.value != '') {
         cardMessage.setAttribute('id', 'oculto');
         cardOutput.setAttribute('id', 'visible');
-    }
+    } 
+    ocultarError();
+
+}
+function mostrarError(){
+    cardError.setAttribute('id','visible');
+    cardMessage.setAttribute("id","oculto");
+    cardOutput.setAttribute('id','oculto');
+}
+function ocultarError(){
+    cardError.setAttribute('id','oculto');
 }
 
-/*Fucncion para comprobar que sea minuscula y no tenga acentos */
-
+/*Fucncion para comprobar uso de mayusculas y acentos*/
+function hasNoUppercase(str) {
+    var pattern = /^[^A-Z]+$/;
+    return pattern.test(str);
+}
+function hasNoAccents(str) {
+    var pattern = /^[\u0020-\u007E]+$/;
+    return pattern.test(str);
+}
 
 /*Funcion para encriptar */
 /**
@@ -58,28 +76,34 @@ function cambiarIdCards() {
  */
 function encrypt() {
     let palabra = textInput.value;
-    const vocals = ['a', 'e', 'i', 'o', 'u'];
-    const wordsToEncript = ["ai", "enter", "imes", "ober", "ufat"];
-    let encryptWord = "";
-    /*recorrer string */
-    for (let i = 0; i < palabra.length; i++) {
-        let isAdded = false;
-        /*condiciones y recorrido de arrs*/
-        for (var j = 0; j < vocals.length; j++) {
-            if (vocals[j] == palabra[i]) {
-                encryptWord += wordsToEncript[j];
-                isAdded = true;
+    if (hasNoUppercase(palabra) && hasNoAccents(palabra)) {
+        const vocals = ['a', 'e', 'i', 'o', 'u'];
+        const wordsToEncript = ["ai", "enter", "imes", "ober", "ufat"];
+        let encryptWord = "";
+        /*recorrer string */
+        for (let i = 0; i < palabra.length; i++) {
+            let isAdded = false;
+            /*condiciones y recorrido de arrs*/
+            for (var j = 0; j < vocals.length; j++) {
+                if (vocals[j] == palabra[i]) {
+                    encryptWord += wordsToEncript[j];
+                    isAdded = true;
+                }
+            }
+            /*concatena solo si en la ciclo del segundo for no agrega nada */
+            if (!isAdded) {
+                encryptWord += palabra[i];
             }
         }
-        /*concatena solo si en la ciclo del segundo for no agrega nada */
-        if (!isAdded) {
-            encryptWord += palabra[i];
-        }
+        console.log(encryptWord);
+        textOutput.value = encryptWord;
+        textOutput.innerText = encryptWord;
+        cambiarIdCards();
+        ocultarError();
+    }else{
+        if(palabra=="") cambiarIdCards;
+        else mostrarError();   
     }
-    console.log(encryptWord);
-    textOutput.value = encryptWord;
-    textOutput.innerText = encryptWord;
-    cambiarIdCards();
 }
 
 /*Funcion para des-ecriptar */
@@ -99,6 +123,7 @@ function decrypt() {
     textOutput.value = decryptWord;
     textOutput.innerText = decryptWord;
     cambiarIdCards();
+    ocultarError();
 
 }
 /*Funcion para agregar el elemento html--cardoutput */

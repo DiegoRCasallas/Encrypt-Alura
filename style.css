@@ -128,8 +128,17 @@ main {
 }
 
 .card-output {
-
     /* display: none; */
+    width: 88%;
+    margin: 2.4rem auto;
+    padding: 3.2rem;
+    font-size: 2.4rem;
+    text-align: left;
+    color: var(--gray-dark);
+    border-radius: 24px;
+    box-shadow: 0px 24px 32px -8px var(--gray-light);
+}
+.card-error{
 
     width: 88%;
     margin: 2.4rem auto;
@@ -140,9 +149,13 @@ main {
     border-radius: 24px;
     box-shadow: 0px 24px 32px -8px var(--gray-light);
 }
+.card-error p{
+    color:red;
+    font-size: bold;
+}
 
 footer {
-    height: 3.0rem;
+    height: 4.0rem;
     margin-top: 10rem;
     min-width: 320px;
     text-align: center;
@@ -150,6 +163,31 @@ footer {
     font-size: 1.6rem;
     background-color: var(--dark-blue);
 
+}
+.info{
+    height: 100%;
+}
+.info ul{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.info ul li{
+    
+    color: white;
+    list-style: none;
+}
+.info a{
+    color: white;
+    text-decoration: none;
+}
+.info img{
+    height: 30px;
+    margin-right: 8px;
+}
+.info--github img{
+    border-radius: 50%;
 }
 
 /*mostrar,coultar cards*/
