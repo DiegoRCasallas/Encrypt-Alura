@@ -97,8 +97,11 @@ main {
 
 
 /*MAIN OUTPUT*/
+.main-output{
+    text-align: center;
+}
 .card-message {
-
+    display: inline-block;
     width: 88%;
     margin: 2.4rem auto;
     padding: 3.2rem;
@@ -106,7 +109,6 @@ main {
     font-weight: bold;
     text-align: center;
     color: var(--gray-dark);
-
     border-radius: 24px;
     box-shadow: 0px 24px 32px -8px var(--gray-light);
 }
@@ -128,14 +130,13 @@ main {
 .card-output {
 
     /* display: none; */
+
     width: 88%;
     margin: 2.4rem auto;
     padding: 3.2rem;
     font-size: 2.4rem;
-    font-weight: bold;
-    text-align: center;
+    text-align: left;
     color: var(--gray-dark);
-
     border-radius: 24px;
     box-shadow: 0px 24px 32px -8px var(--gray-light);
 }
@@ -148,4 +149,14 @@ footer {
     color: white;
     font-size: 1.6rem;
     background-color: var(--dark-blue);
+
+}
+
+/*mostrar,coultar cards*/
+#visible {
+    display: inline-block;
+}
+
+#oculto {
+    display: none;
 }

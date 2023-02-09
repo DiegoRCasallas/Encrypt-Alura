@@ -2,13 +2,13 @@
     display: flex;
 }
 .main-left{
-    width: 80%;
+    width: 70%;
 }
 .main-right{
-
+width: 30%;
 }
 .card-message {
-    display: inline-block;
+    display:inline-block;
     width: 95%;
     height: 100%;
     margin:0 auto;
@@ -22,4 +22,22 @@
 }
 .card-message__img{
     display:inline-block;
+}
+.card-message__img img{
+    width: 100%;
+}
+.card-output{
+    display:inline-block;
+    width: 95%;
+    height: 100%;
+    margin:0 auto;
+    padding: 3.2rem;
+    font-size: 2.0rem;
+    text-align: center;
+    color: var(--gray-dark);
+    border-radius: 24px;
+    box-shadow: 0px 24px 32px -8px var(--gray-light);
+}
+.output__text{
+    height: 80%;
 }

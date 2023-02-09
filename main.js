@@ -12,6 +12,9 @@ const btnEncrypt = document.querySelector('.button-encrypt');
 const btnDecrypt = document.querySelector('.button-decrypt');
 const btnCopy = document.querySelector('.button-copy');
 const textOutput = document.querySelector('.output__text');
+/*cards */
+const cardMessage = document.querySelector('.card-message');
+const cardOutput = document.querySelector('.card-output');
 
 /*escucha de eventos */
 btnEncrypt.addEventListener('click', encrypt);
@@ -19,14 +22,36 @@ btnDecrypt.addEventListener('click', decrypt);
 btnCopy.addEventListener('click', copy);
 
 /*Fucnion para copiar contenido */
+/**
+ * La función copy() toma el valor del elemento textOutput y lo asigna al valor del elemento textInput.
+ */
 function copy() {
- let textToCopy=textOutput.value;
- textInput.value=textToCopy;
- console.log(`Texto copiado: ${textInput.value}`);
-
+    let textToCopy = textOutput.value;
+    textInput.value = textToCopy;
+    console.log(`Texto copiado: ${textInput.value}`);
 }
+/*funcion para ocutar o mostrar las cards */
+function cambiarIdCards() {
+    if (textInput.value == '') {
+        cardMessage.setAttribute('id', 'visible');
+        cardOutput.setAttribute('id', 'oculto');
+    }
+    if (textInput.value != '') {
+        cardMessage.setAttribute('id', 'oculto');
+        cardOutput.setAttribute('id', 'visible');
+    }
+}
+
+
 /*Fucncion para comprobar que sea minuscula y no tenga acentos */
+
+
 /*Funcion para encriptar */
+/**
+ * Para cada letra en la cadena de entrada, si es una vocal, reemplácela con la palabra correspondiente
+ * en la matriz wordsToEncript; de lo contrario, simplemente agregue la letra a la cadena de salida.
+ * @returns la palabra cifrada.
+ */
 function encrypt() {
     let palabra = textInput.value;
     const vocals = ['a', 'e', 'i', 'o', 'u'];
@@ -48,11 +73,17 @@ function encrypt() {
         }
     }
     console.log(encryptWord);
-    return encryptWord
+    textOutput.value = encryptWord;
+    textOutput.innerText = encryptWord;
+    cambiarIdCards();
 }
 
-/* replace()para reemplazar*/
 /*Funcion para des-ecriptar */
+/**
+ * Toma el valor de la entrada de texto, reemplaza las cadenas 'ai', 'enter', 'imes', 'ober' y 'ufat'
+ * con las letras 'a', 'e', 'i', 'o' y 'u' respectivamente, y luego devuelve el resultado.
+ * @returns La palabra descifrada.
+ */
 function decrypt() {
     let palabra = textInput.value;
     let decryptWord = palabra.replace(/ai/g, 'a')
@@ -61,5 +92,9 @@ function decrypt() {
         .replace(/ober/g, 'o')
         .replace(/ufat/g, 'u');
     console.log(decryptWord);
-    return decryptWord;
+    textOutput.value = decryptWord;
+    textOutput.innerText = decryptWord;
+    cambiarIdCards();
+
 }
+/*Funcion para agregar el elemento html--cardoutput */
